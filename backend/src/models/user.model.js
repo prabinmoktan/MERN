@@ -25,28 +25,17 @@ const userSchema = new Schema({
             type: String,
             minLength: 6,
             maxLength: 64,
-            // validate: {
-            //     validator: function(v) {
-            //       return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(v);
-            //     },
-            //     message: props => `${props.value} is not a valid password. It must contain at least one uppercase letter, one lowercase letter, one number, and one special character.`
-            //   }
         
     },
+   watchHistory: {
+    type: Schema.Types.ObjectId,
+    ref: 'Video'
+
+   },
     image:{
       type:String,
       default: '',
     }
-    // confirmPassword: {
-    //     required: true,
-    //     type: String,
-    //     validate: {
-    //         validator: function(v) {
-    //           return v === this.password;
-    //         },
-    //         message: 'Passwords do not match'
-    //       }
-    //     }
     },
     {
       timestamps: true

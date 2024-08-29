@@ -1,0 +1,2 @@
+//Aggregate on mongodb
+// => it helps sorting and counting datas.it helps you look through ypur data and helps in calculation also.its a way to organize and analyze the data to get information out of another datas 
