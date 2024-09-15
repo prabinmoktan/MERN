@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import mongooseAggregatePipeline from 'mongoose-aggregate-paginate-v2'
 
 const videoSchema = new mongoose.Schema({
     title: {
@@ -35,5 +36,7 @@ const videoSchema = new mongoose.Schema({
     }
 
 },{timestamps: true});
+
+videoSchema.plugin(mongooseAggregatePipeline)
 
 export const Video = mongoose.model("Video", videoSchema)

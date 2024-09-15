@@ -35,6 +35,9 @@ const userSchema = new Schema({
     image:{
       type:String,
       default: '',
+    },
+    refreshToken: {
+      type: String,
     }
     },
     {
@@ -74,6 +77,12 @@ userSchema.methods.generateRefreshToken = function(){
   process.env.REFRESH_TOKEN_SECRET,
   { expiresIn: process.env.REFRESH_TOKEN_EXPIRY}
   )
+}
+
+userSchema.methods.setImage = function(){
+  if(File){
+    this.image = this.image.path
+  }
 }
 
 export const User = mongoose.model('User', userSchema);
